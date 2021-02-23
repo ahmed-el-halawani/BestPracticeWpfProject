@@ -11,6 +11,5 @@ BestPractice.Tests/bin/
 BestPractice.Tests/obj/
 BestPractice.EntityFramework/bin/
 BestPractice.EntityFramework/obj/
-
-
-
+BestPractice.Models/bin/
+BestPractice.Models/obj/

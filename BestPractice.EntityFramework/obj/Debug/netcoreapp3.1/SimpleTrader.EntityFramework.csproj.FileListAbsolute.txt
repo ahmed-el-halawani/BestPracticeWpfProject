@@ -1,0 +1,15 @@
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.deps.json
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.runtimeconfig.json
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.runtimeconfig.dev.json
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\SimpleTrader.Domain.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\SimpleTrader.Domain.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.csprojAssemblyReference.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.AssemblyInfoInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.AssemblyInfo.cs
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.csproj.CopyComplete
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\SimpleTrader.EntityFramework.genruntimeconfig.cache

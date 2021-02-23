@@ -1,0 +1,20 @@
+﻿SimpleTrader.WPF
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.WPF\obj\Debug\netcoreapp3.1\
+SimpleTrader.WPF
+none
+false
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.WPF\App.xaml
+12-455768994
+
+41-1714183902
+215-335275469
+Controls\MajorIndexCard.xaml;Controls\MajorIndexList.xaml;Controls\NavigationBar.xaml;MainWindow.xaml;Styles\Colors.xaml;Styles\Common.xaml;Styles\Converter.xaml;Styles\Style.xaml;Views\AboutView.xaml;Views\BuyStockView.xaml;Views\HomeView.xaml;Views\LogInView.xaml;
+
+False
+

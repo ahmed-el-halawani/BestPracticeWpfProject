@@ -1,0 +1,9 @@
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\bin\Debug\netcoreapp3.1\BestPractice.Domain.deps.json
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\bin\Debug\netcoreapp3.1\BestPractice.Domain.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\bin\Debug\netcoreapp3.1\BestPractice.Domain.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\BestPractice.Domain.csprojAssemblyReference.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\BestPractice.Domain.AssemblyInfoInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\BestPractice.Domain.AssemblyInfo.cs
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\BestPractice.Domain.csproj.CoreCompileInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\BestPractice.Domain.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\BestPractice.Domain.pdb

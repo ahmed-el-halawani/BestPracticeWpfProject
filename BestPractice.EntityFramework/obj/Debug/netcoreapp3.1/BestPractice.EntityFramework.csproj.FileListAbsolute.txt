@@ -1,0 +1,15 @@
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\BestPractice.EntityFramework.deps.json
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\BestPractice.EntityFramework.runtimeconfig.json
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\BestPractice.EntityFramework.runtimeconfig.dev.json
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\BestPractice.EntityFramework.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\BestPractice.EntityFramework.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\BestPractice.Domain.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\bin\Debug\netcoreapp3.1\BestPractice.Domain.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\BestPractice.EntityFramework.csprojAssemblyReference.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\BestPractice.EntityFramework.AssemblyInfoInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\BestPractice.EntityFramework.AssemblyInfo.cs
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\BestPractice.EntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\BestPractice.EntityFramework.csproj.CopyComplete
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\BestPractice.EntityFramework.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\BestPractice.EntityFramework.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.EntityFramework\obj\Debug\netcoreapp3.1\BestPractice.EntityFramework.genruntimeconfig.cache

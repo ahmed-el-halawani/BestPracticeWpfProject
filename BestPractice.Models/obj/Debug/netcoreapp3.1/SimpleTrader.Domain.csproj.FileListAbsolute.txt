@@ -1,0 +1,8 @@
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\bin\Debug\netcoreapp3.1\SimpleTrader.Domain.deps.json
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\bin\Debug\netcoreapp3.1\SimpleTrader.Domain.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\bin\Debug\netcoreapp3.1\SimpleTrader.Domain.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\SimpleTrader.Domain.AssemblyInfoInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\SimpleTrader.Domain.AssemblyInfo.cs
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\SimpleTrader.Domain.csproj.CoreCompileInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\SimpleTrader.Domain.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\BestPractice.Models\obj\Debug\netcoreapp3.1\SimpleTrader.Domain.pdb

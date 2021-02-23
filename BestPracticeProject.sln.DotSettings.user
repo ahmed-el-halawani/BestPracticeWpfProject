@@ -1,0 +1,16 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=20354490_002D6121_002D4a2a_002D9aba_002D67214f26e074/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Login_TestinCorrectUserNameWithCorrectPassword_ReturnAccount" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12AD64CF-EEE2-4B04-A5F5-12E88CC3BAAA::.NETCoreApp,Version=v3.1::BestPractice.Domain.Tests.Services.AuthenticationTests.Login_TestinCorrectUserNameWithCorrectPassword_ReturnAccount&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12AD64CF-EEE2-4B04-A5F5-12E88CC3BAAA::.NETCoreApp,Version=v3.1::BestPractice.Domain.Tests.Services.AuthenticationTests.Login_TestUserNameWithInCorrectPassword_ReturnAccount&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12AD64CF-EEE2-4B04-A5F5-12E88CC3BAAA::.NETCoreApp,Version=v3.1::BestPractice.Domain.Tests.Services.AuthenticationTests.Register_withMismatchPasswordAndConfirmPassword_returnPasswordMismatchResult&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12AD64CF-EEE2-4B04-A5F5-12E88CC3BAAA::.NETCoreApp,Version=v3.1::BestPractice.Domain.Tests.Services.AuthenticationTests.Register_withExistingUserName_returnPasswordMismatchResult&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12AD64CF-EEE2-4B04-A5F5-12E88CC3BAAA::.NETCoreApp,Version=v3.1::BestPractice.Domain.Tests.Services.AuthenticationTests.Register_withExistingEmail_returnPasswordMismatchResult&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=AAPL/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Authed/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

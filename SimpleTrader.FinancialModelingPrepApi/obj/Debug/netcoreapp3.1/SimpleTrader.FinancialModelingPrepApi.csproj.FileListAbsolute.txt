@@ -1,0 +1,12 @@
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\bin\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.deps.json
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\bin\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\bin\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\bin\Debug\netcoreapp3.1\SimpleTrader.Domain.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\bin\Debug\netcoreapp3.1\SimpleTrader.Domain.pdb
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\obj\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.csprojAssemblyReference.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\obj\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.AssemblyInfoInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\obj\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.AssemblyInfo.cs
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\obj\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.csproj.CoreCompileInputs.cache
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\obj\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.csproj.CopyComplete
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\obj\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.dll
+C:\Users\A H M E D\source\repos\BestPracticeProject\SimpleTrader.FinancialModelingPrepApi\obj\Debug\netcoreapp3.1\SimpleTrader.FinancialModelingPrepApi.pdb

@@ -1,9 +1,9 @@
 ﻿using SimpleTrader.WPF.Models;
 using SimpleTrader.WPF.ViewModels;
 
-namespace SimpleTrader.WPF.State.Navigators
+namespace SimpleTrader.WPF.State.NavigatorState
 {
-	public class Navigator : ObservableAction,INavigator
+	public class NavigatorState : ObservableAction,INavigatorState
 	{
 		private ViewModelsBase _currentViewModel;
 

@@ -1,14 +1,12 @@
 ﻿using System;
 using SimpleTrader.WPF.ViewModels;
 
-namespace SimpleTrader.WPF.State.CustomNav
+namespace SimpleTrader.WPF.Models.Navigator
 {
-	public class CustomNav
+	public class Navigator
 	{
 		public event Action CurrentViewModelChanged;
 
-
-		private ViewType _currentViewType;
 		public ViewType CurrentViewType
 		{
 			get => _currentViewType;
@@ -19,12 +17,11 @@ namespace SimpleTrader.WPF.State.CustomNav
 			}
 		}
 
+		private ViewType _currentViewType;
 
 		protected virtual void OnCurrentViewModelChanged()
 		{
 			CurrentViewModelChanged?.Invoke();
 		}
 	}
-
-
 }

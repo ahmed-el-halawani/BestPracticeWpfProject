@@ -11,11 +11,11 @@ using SimpleTrader.EntityFramework.Services;
 using SimpleTrader.FinancialModelingPrepApi.Services;
 using SimpleTrader.WPF.Models;
 using SimpleTrader.WPF.Models.Authenticator;
+using SimpleTrader.WPF.Models.Navigator;
 using SimpleTrader.WPF.State.AuthedState;
-using SimpleTrader.WPF.State.CustomNav;
-using SimpleTrader.WPF.State.Navigators;
+using SimpleTrader.WPF.State.NavigatorState;
 using SimpleTrader.WPF.ViewModels;
-using SimpleTrader.WPF.ViewModels.factories;
+using SimpleTrader.WPF.ViewModels.MVSwitcher;
 using SimpleTrader.WPF.Views;
 
 namespace SimpleTrader.WPF
@@ -48,7 +48,7 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<IAuthenticationService, AuthenticationService>();
 			services.AddSingleton<IPasswordHasher,PasswordHasher>();
 			services.AddSingleton<IAuthenticator,Authenticator>();
-			services.AddSingleton<CustomNav>();
+			services.AddSingleton<Navigator>();
 			services.AddSingleton<IAuthedUser,AuthedUser>();
 
 			services.AddTransient<BuyStockViewModel>();
@@ -68,7 +68,7 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<ViewModelDelegate<LogInViewModel>>(s=> s.GetRequiredService<LogInViewModel>);
 			services.AddSingleton<ViewModelDelegate<BuyStockViewModel>>(s=> s.GetRequiredService<BuyStockViewModel>);
 
-			services.AddSingleton<INavigator,Navigator>();
+			services.AddSingleton<INavigatorState,NavigatorState>();
 			services.AddSingleton<MainViewModel>();
 			services.AddScoped<MainWindow>();
 

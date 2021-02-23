@@ -7,6 +7,7 @@ using SimpleTrader.Domain.Models;
 using SimpleTrader.Domain.Services;
 using SimpleTrader.Domain.Services.TransactionServices;
 using SimpleTrader.WPF.Commands;
+using SimpleTrader.WPF.State.AuthedState;
 
 namespace SimpleTrader.WPF.ViewModels
 {
@@ -16,14 +17,14 @@ namespace SimpleTrader.WPF.ViewModels
 		IBuyStockService _buyStockService;
 		private IDataService<Account> _accountDataService;
 
-		public BuyStockViewModel(IStockPriceService stuckPriceService, IBuyStockService buyStockService, IDataService<Account> accountDataService)
+		public BuyStockViewModel(IStockPriceService stuckPriceService, IBuyStockService buyStockService, IDataService<Account> accountDataService,IAuthedUser authedUser)
 		{
 			_stuckPriceService = stuckPriceService;
 			_buyStockService = buyStockService;
 			_accountDataService = accountDataService;
 
 			GetSymbolPriceCommand = new GetSymbolPriceCommand(stuckPriceService, this);
-			BuyStockCommand = new BuyStockCommand(_accountDataService,_buyStockService,this);
+			BuyStockCommand = new BuyStockCommand(_accountDataService,authedUser,_buyStockService,this);
 		}
 
 		public ICommand GetSymbolPriceCommand { get; set; }

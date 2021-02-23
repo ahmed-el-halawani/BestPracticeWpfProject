@@ -8,6 +8,7 @@ using SimpleTrader.Domain.Models;
 using SimpleTrader.Domain.Services;
 using SimpleTrader.Domain.Services.TransactionServices;
 using SimpleTrader.WPF.Commands.Customs;
+using SimpleTrader.WPF.State.AuthedState;
 using SimpleTrader.WPF.ViewModels;
 
 namespace SimpleTrader.WPF.Commands
@@ -16,12 +17,14 @@ namespace SimpleTrader.WPF.Commands
 	{
 		private readonly BuyStockViewModel _buyStockViewModel;
 		private readonly IDataService<Account> _accDataService;
+		private readonly IAuthedUser _authedUser;
 		private readonly IBuyStockService _buyStockService;
 
-		public BuyStockCommand(IDataService<Account> accDataService, IBuyStockService buyStockService,BuyStockViewModel buyStockViewModel)
+		public BuyStockCommand(IDataService<Account> accDataService,IAuthedUser authedUser, IBuyStockService buyStockService,BuyStockViewModel buyStockViewModel)
 		{
 			_buyStockViewModel = buyStockViewModel;
 			_accDataService = accDataService;
+			_authedUser = authedUser;
 			_buyStockService = buyStockService;
 		}
 
@@ -29,10 +32,10 @@ namespace SimpleTrader.WPF.Commands
 		{
 			string symbol = _buyStockViewModel.SearchedSymbol;
 			int amountOfShares = _buyStockViewModel.AmountOfSharesInt;
-			Account account = await _accDataService.Get(3);
+			Account account = _authedUser.CurrentAccount;
 			try
 			{
-				await _buyStockService.BuyStock(account,symbol,amountOfShares);
+				_authedUser.CurrentAccount = await _buyStockService.BuyStock(account,symbol,amountOfShares);
 			}
 			catch (Exception e)
 			{

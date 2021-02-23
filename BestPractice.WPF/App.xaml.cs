@@ -9,14 +9,14 @@ using SimpleTrader.Domain.Services.TransactionServices;
 using SimpleTrader.EntityFramework;
 using SimpleTrader.EntityFramework.Services;
 using SimpleTrader.FinancialModelingPrepApi.Services;
-using SimpleTrader.WPF.Models;
 using SimpleTrader.WPF.Models.Authenticator;
 using SimpleTrader.WPF.Models.Navigator;
+using SimpleTrader.WPF.State.AssetState;
 using SimpleTrader.WPF.State.AuthedState;
 using SimpleTrader.WPF.State.NavigatorState;
 using SimpleTrader.WPF.ViewModels;
+using SimpleTrader.WPF.ViewModels.AssetTransactionViewModels;
 using SimpleTrader.WPF.ViewModels.MVSwitcher;
-using SimpleTrader.WPF.Views;
 
 namespace SimpleTrader.WPF
 {
@@ -50,11 +50,13 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<IAuthenticator,Authenticator>();
 			services.AddSingleton<INavigator,Navigator>();
 			services.AddSingleton<IAuthedUser,AuthedUser>();
+			services.AddSingleton<AssetState>();
 
 			services.AddTransient<BuyStockViewModel>();
 			services.AddSingleton<HomeViewModel>();
 			services.AddTransient<AboutViewModel>();
 			services.AddTransient<LogInViewModel>();
+			services.AddTransient<AssetTransactionViewModel>();
 
 			services.AddSingleton(s=>MajorIndexViewModel.LoadMajorIndexViewModel
 				(

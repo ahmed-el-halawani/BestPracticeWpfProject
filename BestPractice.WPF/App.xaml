@@ -2,7 +2,7 @@
   x:Class="SimpleTrader.WPF.App"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  xmlns:ViewModel ="clr-namespace:SimpleTrader.WPF.ViewModels"
+  xmlns:viewModel ="clr-namespace:SimpleTrader.WPF.ViewModels"
   xmlns:view ="clr-namespace:SimpleTrader.WPF.Views"
   xmlns:local="clr-namespace:SimpleTrader.WPF">
   <Application.Resources>
@@ -18,20 +18,20 @@
 
 
 
-      <DataTemplate DataType="{x:Type ViewModel:HomeViewModel}">
+      <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
         <view:HomeView></view:HomeView>
       </DataTemplate>
 
-      <DataTemplate DataType="{x:Type ViewModel:AboutViewModel}">
+      <DataTemplate DataType="{x:Type viewModel:AboutViewModel}">
         <view:AboutView></view:AboutView>
       </DataTemplate>
 
-      <DataTemplate DataType="{x:Type ViewModel:BuyStockViewModel}">
+      <DataTemplate DataType="{x:Type viewModel:BuyStockViewModel}">
         <view:BuyStockView></view:BuyStockView>
       </DataTemplate>
 
 
-      <DataTemplate DataType="{x:Type ViewModel:LogInViewModel}">
+      <DataTemplate DataType="{x:Type viewModel:LogInViewModel}">
         <view:LogInView LogInCommand="{Binding LogInCommand}"></view:LogInView>
       </DataTemplate>
 

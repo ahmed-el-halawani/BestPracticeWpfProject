@@ -5,5 +5,12 @@
 .vs/BestPracticeProject/v16/
 BestPractice.WPF/bin/
 BestPractice.WPF/obj/
+BestPractice.App/bin/
+BestPractice.App/obj/
+BestPractice.Tests/bin/
+BestPractice.Tests/obj/
+BestPractice.EntityFramework/bin/
+BestPractice.EntityFramework/obj/
+
 
 

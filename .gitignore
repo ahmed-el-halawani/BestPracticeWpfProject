@@ -2,7 +2,6 @@
 *.pdb
 *.baml
 *.cache
-.vs/BestPracticeProject/v16/
 BestPractice.WPF/bin/
 BestPractice.WPF/obj/
 BestPractice.App/bin/
@@ -17,3 +16,4 @@ BestPractice.Domain.Tests/obj/
 BestPractice.Domain.Tests/bin/
 SimpleTrader.FinancialModelingPrepApi/obj/
 SimpleTrader.FinancialModelingPrepApi/bin/
+.vs/BestPracticeProject/

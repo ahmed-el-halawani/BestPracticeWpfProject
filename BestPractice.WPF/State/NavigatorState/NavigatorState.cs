@@ -5,7 +5,6 @@ namespace SimpleTrader.WPF.State.NavigatorState
 {
 	public class NavigatorState : ObservableAction,INavigatorState
 	{
-		private ViewModelsBase _currentViewModel;
 
 		public ViewModelsBase CurrentViewModel
 		{
@@ -17,6 +16,7 @@ namespace SimpleTrader.WPF.State.NavigatorState
 			}
 		}
 
+		private ViewModelsBase _currentViewModel;
 
 	}
 }

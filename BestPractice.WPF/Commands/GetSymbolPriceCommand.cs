@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Input;
-using SimpleTrader.Domain.Models;
 using SimpleTrader.Domain.Services;
-using SimpleTrader.Domain.Services.TransactionServices;
 using SimpleTrader.WPF.Commands.Customs;
 using SimpleTrader.WPF.ViewModels;
 

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SimpleTrader.WPF.ViewModels.AssetTransactionViewModels;
 
 namespace SimpleTrader.WPF.ViewModels
 {
@@ -8,13 +6,12 @@ namespace SimpleTrader.WPF.ViewModels
 	{
 		public MajorIndexViewModel MajorIndexViewModel { get; set; }
 
+		public AssetTransactionViewModel AssetTransactionViewModel { get; set; }
 
-		public HomeViewModel(MajorIndexViewModel majorIndexViewModel)
+		public HomeViewModel(MajorIndexViewModel majorIndexViewModel,AssetTransactionViewModel assetTransactionViewModel)
 		{
 			MajorIndexViewModel = majorIndexViewModel;
+			AssetTransactionViewModel = assetTransactionViewModel;
 		}
-
-
-
 	}
 }

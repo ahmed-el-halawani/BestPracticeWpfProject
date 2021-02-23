@@ -1,6 +1,9 @@
-
 *.dll
 *.pdb
 *.baml
 *.cache
 .vs/BestPracticeProject/v16/
+BestPractice.WPF/bin/
+BestPractice.WPF/obj/
+
+

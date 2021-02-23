@@ -5,15 +5,14 @@ using System.Windows.Input;
 using SimpleTrader.WPF.Commands;
 using SimpleTrader.WPF.Models;
 using SimpleTrader.WPF.Models.Authenticator;
-using SimpleTrader.WPF.State.CustomNav;
-using SimpleTrader.WPF.State.Navigators;
+using SimpleTrader.WPF.Models.Navigator;
 
 namespace SimpleTrader.WPF.ViewModels
 {
 	public class LogInViewModel : ViewModelsBase
 	{
-		public LogInViewModel(IAuthenticator authenticator, CustomNav customNav) => 
-			LogInCommand = new LogInCommand(this, authenticator, customNav);
+		public LogInViewModel(IAuthenticator authenticator, Navigator navigator) => 
+			LogInCommand = new LogInCommand(this, authenticator, navigator);
 
 		private string _userName;
 		public string UserName

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimpleTrader.WPF.ViewModels.factories
+namespace SimpleTrader.WPF.ViewModels.MVSwitcher
 {
 	class ViewModelSwitcher : IViewModelSwitcher
 	{

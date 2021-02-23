@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using SimpleTrader.WPF.Commands;
-using SimpleTrader.WPF.State.CustomNav;
-using SimpleTrader.WPF.State.Navigators;
-using SimpleTrader.WPF.ViewModels.factories;
+using SimpleTrader.WPF.Models.Navigator;
+using SimpleTrader.WPF.State.NavigatorState;
+using SimpleTrader.WPF.ViewModels.MVSwitcher;
 
 namespace SimpleTrader.WPF.ViewModels
 {
@@ -16,13 +16,13 @@ namespace SimpleTrader.WPF.ViewModels
 	public class NavigatorViewModel : ViewModelsBase
 	{
 		public ICommand UpdateCurrentViewModelCommand { get; set; }
-		public ViewModelsBase CurrentViewModel => _navigator.CurrentViewModel;
+		public ViewModelsBase CurrentViewModel => _navigatorState.CurrentViewModel;
 
-		public NavigatorViewModel(INavigator navigator,IViewModelSwitcher viewModelAbstractFactory,CustomNav customNav)
+		public NavigatorViewModel(INavigatorState navigatorState,IViewModelSwitcher viewModelAbstractFactory,Navigator navigator)
 		{
-			_navigator = navigator;
+			_navigatorState = navigatorState;
 			_viewModelAbstractFactory = viewModelAbstractFactory;
-			_customNav = customNav;
+			_navigator = navigator;
 
 			Actions();
 
@@ -31,22 +31,22 @@ namespace SimpleTrader.WPF.ViewModels
 
 		private void Actions()
 		{
-			_customNav.CurrentViewModelChanged += ChangeViewModel;
-			_navigator.Observer += () => { OnPropertyChanged(nameof(CurrentViewModel));};
+			_navigator.CurrentViewModelChanged += ChangeViewModel;
+			_navigatorState.Observer += () => { OnPropertyChanged(nameof(CurrentViewModel));};
 		}
 
-		private readonly INavigator _navigator;
+		private readonly INavigatorState _navigatorState;
 		private readonly IViewModelSwitcher _viewModelAbstractFactory;
-		private readonly CustomNav _customNav;
+		private readonly Navigator _navigator;
 
 		private void ChangeViewModel()
 		{
-			_navigator.CurrentViewModel =  _viewModelAbstractFactory.GetViewModel(_customNav.CurrentViewType);
+			_navigatorState.CurrentViewModel =  _viewModelAbstractFactory.GetViewModel(_navigator.CurrentViewType);
 		}
 
 		private void Commands()
 		{
-			UpdateCurrentViewModelCommand = new NavigateCommand(_customNav);
+			UpdateCurrentViewModelCommand = new NavigateCommand(_navigator);
 		}
 	}
 }

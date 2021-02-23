@@ -1,10 +1,10 @@
 ﻿using System.Windows.Input;
 using SimpleTrader.WPF.Commands;
 using SimpleTrader.WPF.Models;
+using SimpleTrader.WPF.Models.Navigator;
 using SimpleTrader.WPF.State.AuthedState;
-using SimpleTrader.WPF.State.CustomNav;
-using SimpleTrader.WPF.State.Navigators;
-using SimpleTrader.WPF.ViewModels.factories;
+using SimpleTrader.WPF.State.NavigatorState;
+using SimpleTrader.WPF.ViewModels.MVSwitcher;
 
 namespace SimpleTrader.WPF.ViewModels
 {
@@ -12,13 +12,13 @@ namespace SimpleTrader.WPF.ViewModels
 	{
 		public bool IsLoggedIn => _authedUser.IsLoggedIn;
 
-		public MainViewModel(INavigator navigator,IViewModelSwitcher viewModelAbstractFactory,CustomNav customNav,IAuthedUser authedUser):base(navigator,viewModelAbstractFactory,customNav)
+		public MainViewModel(INavigatorState navigatorState,IViewModelSwitcher viewModelAbstractFactory,Navigator navigator,IAuthedUser authedUser):base(navigatorState,viewModelAbstractFactory,navigator)
 		{
 			_authedUser = authedUser;
 
 			Actions();
 
-			customNav.CurrentViewType = ViewType.Login;
+			navigator.CurrentViewType = ViewType.Login;
 		}
 
 		private readonly IAuthedUser _authedUser;

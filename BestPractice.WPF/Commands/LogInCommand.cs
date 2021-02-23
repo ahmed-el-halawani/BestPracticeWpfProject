@@ -4,8 +4,7 @@ using SimpleTrader.Domain.Models;
 using SimpleTrader.WPF.Commands.Customs;
 using SimpleTrader.WPF.Models;
 using SimpleTrader.WPF.Models.Authenticator;
-using SimpleTrader.WPF.State.CustomNav;
-using SimpleTrader.WPF.State.Navigators;
+using SimpleTrader.WPF.Models.Navigator;
 using SimpleTrader.WPF.ViewModels;
 
 namespace SimpleTrader.WPF.Commands
@@ -16,7 +15,7 @@ namespace SimpleTrader.WPF.Commands
 		private readonly IAuthenticator _authenticator;
 
 		public LogInCommand(LogInViewModel logInViewModel, IAuthenticator authenticator,
-			CustomNav customNav):base(customNav)
+			Navigator navigator):base(navigator)
 		{
 			_logInViewModel = logInViewModel;
 			_authenticator = authenticator;

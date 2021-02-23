@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SimpleTrader.WPF.ViewModels.factories;
 
 namespace SimpleTrader.WPF.ViewModels
 {

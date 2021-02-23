@@ -1,21 +1,21 @@
 ﻿using SimpleTrader.WPF.Commands.Customs;
-using SimpleTrader.WPF.State.CustomNav;
+using SimpleTrader.WPF.Models.Navigator;
 using SimpleTrader.WPF.ViewModels;
 
 namespace SimpleTrader.WPF.Commands
 {
 	public class NavigateCommand : BaseCommand
 	{
-		private readonly CustomNav _customNav;
+		private readonly Navigator _navigator;
 
-		public NavigateCommand(CustomNav customNav)
+		public NavigateCommand(Navigator navigator)
 		{
-			_customNav = customNav;
+			_navigator = navigator;
 		}
 
 		public  override  void Execute(object parameter)
 		{
-			_customNav.CurrentViewType = (ViewType)parameter;
+			_navigator.CurrentViewType = (ViewType)parameter;
 		}
 	}
 }

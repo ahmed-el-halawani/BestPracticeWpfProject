@@ -12,7 +12,7 @@ namespace SimpleTrader.WPF.ViewModels
 	{
 		public bool IsLoggedIn => _authedUser.IsLoggedIn;
 
-		public MainViewModel(INavigatorState navigatorState,IViewModelSwitcher viewModelAbstractFactory,Navigator navigator,IAuthedUser authedUser):base(navigatorState,viewModelAbstractFactory,navigator)
+		public MainViewModel(INavigatorState navigatorState,IViewModelSwitcher viewModelAbstractFactory,INavigator navigator,IAuthedUser authedUser):base(navigatorState,viewModelAbstractFactory,navigator)
 		{
 			_authedUser = authedUser;
 

@@ -6,9 +6,9 @@ namespace SimpleTrader.WPF.Commands
 {
 	public class NavigateCommand : BaseCommand
 	{
-		private readonly Navigator _navigator;
+		private readonly INavigator _navigator;
 
-		public NavigateCommand(Navigator navigator)
+		public NavigateCommand(INavigator navigator)
 		{
 			_navigator = navigator;
 		}

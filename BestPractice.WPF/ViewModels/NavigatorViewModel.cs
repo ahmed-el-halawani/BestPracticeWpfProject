@@ -18,7 +18,7 @@ namespace SimpleTrader.WPF.ViewModels
 		public ICommand UpdateCurrentViewModelCommand { get; set; }
 		public ViewModelsBase CurrentViewModel => _navigatorState.CurrentViewModel;
 
-		public NavigatorViewModel(INavigatorState navigatorState,IViewModelSwitcher viewModelAbstractFactory,Navigator navigator)
+		public NavigatorViewModel(INavigatorState navigatorState,IViewModelSwitcher viewModelAbstractFactory,INavigator navigator)
 		{
 			_navigatorState = navigatorState;
 			_viewModelAbstractFactory = viewModelAbstractFactory;
@@ -31,13 +31,13 @@ namespace SimpleTrader.WPF.ViewModels
 
 		private void Actions()
 		{
-			_navigator.CurrentViewModelChanged += ChangeViewModel;
+			_navigator.Observer += ChangeViewModel;
 			_navigatorState.Observer += () => { OnPropertyChanged(nameof(CurrentViewModel));};
 		}
 
 		private readonly INavigatorState _navigatorState;
 		private readonly IViewModelSwitcher _viewModelAbstractFactory;
-		private readonly Navigator _navigator;
+		private readonly INavigator _navigator;
 
 		private void ChangeViewModel()
 		{

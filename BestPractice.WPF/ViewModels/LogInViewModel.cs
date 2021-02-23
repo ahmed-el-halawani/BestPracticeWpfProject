@@ -11,10 +11,8 @@ namespace SimpleTrader.WPF.ViewModels
 {
 	public class LogInViewModel : ViewModelsBase
 	{
-		public LogInViewModel(IAuthenticator authenticator, Navigator navigator) => 
-			LogInCommand = new LogInCommand(this, authenticator, navigator);
+		public ICommand LogInCommand { get; set; }
 
-		private string _userName;
 		public string UserName
 		{
 			get => _userName;
@@ -25,6 +23,10 @@ namespace SimpleTrader.WPF.ViewModels
 			}
 		}
 
-		public ICommand LogInCommand { get; set; }
+		public LogInViewModel(IAuthenticator authenticator, INavigator navigator) => 
+			LogInCommand = new LogInCommand(this, authenticator, navigator);
+
+		private string _userName;
+		
 	}
 }

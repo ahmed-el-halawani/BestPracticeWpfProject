@@ -15,7 +15,7 @@ namespace SimpleTrader.WPF.Commands
 		private readonly IAuthenticator _authenticator;
 
 		public LogInCommand(LogInViewModel logInViewModel, IAuthenticator authenticator,
-			Navigator navigator):base(navigator)
+			INavigator navigator):base(navigator)
 		{
 			_logInViewModel = logInViewModel;
 			_authenticator = authenticator;

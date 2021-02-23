@@ -48,7 +48,7 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<IAuthenticationService, AuthenticationService>();
 			services.AddSingleton<IPasswordHasher,PasswordHasher>();
 			services.AddSingleton<IAuthenticator,Authenticator>();
-			services.AddSingleton<Navigator>();
+			services.AddSingleton<INavigator,Navigator>();
 			services.AddSingleton<IAuthedUser,AuthedUser>();
 
 			services.AddTransient<BuyStockViewModel>();

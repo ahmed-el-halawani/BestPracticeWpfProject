@@ -10,7 +10,7 @@ namespace SimpleTrader.FinancialModelingPrepApi.Customs
 {
 	public class StockPriceHttpClient : HttpClient
 	{
-		private string apiKey = "?apikey=fbf300a1773a0a6688f5e2e1d3a75774";
+		private readonly string apiKey = "?apikey=fbf300a1773a0a6688f5e2e1d3a75774";
 
 		public StockPriceHttpClient()
 		{
@@ -28,7 +28,7 @@ namespace SimpleTrader.FinancialModelingPrepApi.Customs
 
 				return deserializeObject;
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				throw new Exception("no internet connection");
 			}

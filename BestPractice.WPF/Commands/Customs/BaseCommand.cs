@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace SimpleTrader.WPF.Commands.Customs
 {
-	public class CustomCommand : ICommand
+	public class BaseCommand : ICommand
 	{
 		public virtual bool CanExecute(object parameter)
 		{

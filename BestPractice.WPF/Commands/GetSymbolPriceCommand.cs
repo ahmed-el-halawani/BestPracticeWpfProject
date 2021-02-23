@@ -11,7 +11,7 @@ using SimpleTrader.WPF.ViewModels;
 
 namespace SimpleTrader.WPF.Commands
 {
-	class GetSymbolPriceCommand : CustomCommand
+	class GetSymbolPriceCommand : BaseCommand
 	{
 		private readonly IStockPriceService _stuckPriceService;
 		private readonly BuyStockViewModel _buyStockViewModel;

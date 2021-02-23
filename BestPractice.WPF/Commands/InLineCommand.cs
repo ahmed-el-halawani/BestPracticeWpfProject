@@ -10,7 +10,7 @@ namespace SimpleTrader.WPF.Commands
 	public delegate void ExecuteIt(object parameter);
 	public delegate bool CanExecuteIt(object parameter);
 
-	public class InLineCommand : CustomCommand
+	public class InLineCommand : BaseCommand
 	{
 		private readonly CanExecuteIt _canExecuteIt;
 		private readonly ExecuteIt _executeIt;

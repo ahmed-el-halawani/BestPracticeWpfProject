@@ -5,7 +5,6 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:local="clr-namespace:SimpleTrader.WPF.Controls"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:nav="clr-namespace:SimpleTrader.WPF.State.Navigators"
   d:DesignHeight="450"
   d:DesignWidth="800"
   xmlns:mv="clr-namespace:SimpleTrader.WPF.ViewModels"
@@ -34,28 +33,28 @@
       <RadioButton
         Grid.Column="0"
         Margin="10"
-        IsChecked="{Binding Navigator.CurrentViewModel,Converter={StaticResource AssignBindingToParam},ConverterParameter={x:Type mv:HomeViewModel}}"
+        IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam},ConverterParameter={x:Type mv:HomeViewModel}}"
 
         Content="HomeView"
         Command="{Binding UpdateCurrentViewModelCommand}"
-        CommandParameter="{x:Static nav:ViewType.Home}"
+        CommandParameter="{x:Static mv:ViewType.Home}"
         Foreground="White" />
       <RadioButton
         Grid.Column="1"
         Margin="10"
-        IsChecked="{Binding Navigator.CurrentViewModel,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:AboutViewModel}}"
+        IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:AboutViewModel}}"
         Content="AboutView"
         Command="{Binding UpdateCurrentViewModelCommand}"
-        CommandParameter="{x:Static nav:ViewType.About}"
+        CommandParameter="{x:Static mv:ViewType.About}"
         Foreground="White" />
 
       <RadioButton
         Grid.Column="2"
         Margin="10"
-        IsChecked="{Binding Navigator.CurrentViewModel,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:BuyStockViewModel}}"
+        IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:BuyStockViewModel}}"
         Content="Buy Stock"
         Command="{Binding UpdateCurrentViewModelCommand}"
-        CommandParameter="{x:Static nav:ViewType.Buy}"
+        CommandParameter="{x:Static mv:ViewType.Buy}"
         Foreground="White" />
     </Grid>
 

@@ -3,23 +3,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using SimpleTrader.WPF.Commands;
-using SimpleTrader.WPF.State.Authenticator;
+using SimpleTrader.WPF.Models;
+using SimpleTrader.WPF.Models.Authenticator;
+using SimpleTrader.WPF.State.CustomNav;
 using SimpleTrader.WPF.State.Navigators;
 
 namespace SimpleTrader.WPF.ViewModels
 {
 	public class LogInViewModel : ViewModelsBase
 	{
-		private readonly IAuthenticator _authenticator;
-		private readonly IReNavigator _reNavigator;
-
-		public LogInViewModel(IAuthenticator authenticator, IReNavigator reNavigator)
-		{
-			_authenticator = authenticator;
-			_reNavigator = reNavigator;
-			LogInCommand = new LogInCommand(this, authenticator,reNavigator);
-		}
-
+		public LogInViewModel(IAuthenticator authenticator, CustomNav customNav) => 
+			LogInCommand = new LogInCommand(this, authenticator, customNav);
 
 		private string _userName;
 		public string UserName
@@ -32,10 +26,6 @@ namespace SimpleTrader.WPF.ViewModels
 			}
 		}
 
-
-
 		public ICommand LogInCommand { get; set; }
-
-
 	}
 }

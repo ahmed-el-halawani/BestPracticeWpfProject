@@ -10,7 +10,7 @@
   Title="MainWindow"
   Width="800"
   Height="450"
-  d:DataContext="{d:DesignInstance mv:MainViewModel,IsDesignTimeCreatable=True}"
+  d:DataContext="{d:DesignInstance mv:MainViewModel}"
 
   mc:Ignorable="d">
   <Grid>
@@ -24,7 +24,7 @@
       <Grid.Style>
         <Style TargetType="Grid" >
           <Style.Triggers >
-            <DataTrigger Binding="{Binding Authenticator.IsLoggedIn}"  Value="false">
+            <DataTrigger Binding="{Binding IsLoggedIn}"  Value="false">
               <Setter Property="Visibility" Value="Collapsed"></Setter>
             </DataTrigger>
           </Style.Triggers>
@@ -34,7 +34,7 @@
     </Grid>
 
     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-      <ContentControl  Background="Green" Content="{Binding Navigator.CurrentViewModel}"></ContentControl>
+      <ContentControl  Background="Green" Content="{Binding CurrentViewModel}"></ContentControl>
     </ScrollViewer>
 
 

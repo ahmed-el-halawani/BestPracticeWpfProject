@@ -13,7 +13,6 @@ namespace SimpleTrader.WPF.ViewModels
 		public HomeViewModel(MajorIndexViewModel majorIndexViewModel)
 		{
 			MajorIndexViewModel = majorIndexViewModel;
-			Title = "mohamed";
 		}
 
 

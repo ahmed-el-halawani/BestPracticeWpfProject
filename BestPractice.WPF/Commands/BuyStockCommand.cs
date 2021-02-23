@@ -12,7 +12,7 @@ using SimpleTrader.WPF.ViewModels;
 
 namespace SimpleTrader.WPF.Commands
 {
-	class BuyStockCommand : CustomCommand
+	class BuyStockCommand : BaseCommand
 	{
 		private readonly BuyStockViewModel _buyStockViewModel;
 		private readonly IDataService<Account> _accDataService;

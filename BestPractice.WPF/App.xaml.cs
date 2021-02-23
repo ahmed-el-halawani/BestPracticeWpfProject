@@ -9,7 +9,10 @@ using SimpleTrader.Domain.Services.TransactionServices;
 using SimpleTrader.EntityFramework;
 using SimpleTrader.EntityFramework.Services;
 using SimpleTrader.FinancialModelingPrepApi.Services;
-using SimpleTrader.WPF.State.Authenticator;
+using SimpleTrader.WPF.Models;
+using SimpleTrader.WPF.Models.Authenticator;
+using SimpleTrader.WPF.State.AuthedState;
+using SimpleTrader.WPF.State.CustomNav;
 using SimpleTrader.WPF.State.Navigators;
 using SimpleTrader.WPF.ViewModels;
 using SimpleTrader.WPF.ViewModels.factories;
@@ -24,16 +27,16 @@ namespace SimpleTrader.WPF
 	{
 		protected override void OnStartup(StartupEventArgs e)
 		{
-			IServiceProvider services = createServiceProvider();
+			IServiceProvider services = CreateServiceProvider();
 			services.GetRequiredService<MainWindow>().Show();
 			base.OnStartup(e);
 		}
 
 
-		private IServiceProvider createServiceProvider()
+
+		private IServiceProvider CreateServiceProvider()
 		{
 			IServiceCollection services = new ServiceCollection();
-
 
 			services.AddSingleton<IStockPriceService, StockPriceService>();
 			services.AddSingleton<IDataService<Account>,AccountDataService>();
@@ -45,22 +48,28 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<IAuthenticationService, AuthenticationService>();
 			services.AddSingleton<IPasswordHasher,PasswordHasher>();
 			services.AddSingleton<IAuthenticator,Authenticator>();
-			services.AddSingleton<ReNavigator<HomeViewModel>>();
+			services.AddSingleton<CustomNav>();
+			services.AddSingleton<IAuthedUser,AuthedUser>();
 
-			services.AddSingleton<IBestPracticeViewModelsAbstractFactory,BestPracticeViewModelAbstractFactory>();
-			services.AddSingleton<IViewModelFactory<HomeViewModel>,HomeViewModelFactory>();
-			services.AddSingleton<IViewModelFactory<AboutViewModel>,AboutViewModelFactory>();
-			services.AddSingleton<IViewModelFactory<MajorIndexViewModel>,MajorIndexViewModelFactory>();
-			services.AddSingleton<IViewModelFactory<LogInViewModel>,LoginViewModelFactory>(
-				e=> new LoginViewModelFactory
-				(e.GetRequiredService<IAuthenticator>(),
-				e.GetRequiredService<ReNavigator<HomeViewModel>>()
+			services.AddTransient<BuyStockViewModel>();
+			services.AddSingleton<HomeViewModel>();
+			services.AddTransient<AboutViewModel>();
+			services.AddTransient<LogInViewModel>();
+
+			services.AddSingleton(s=>MajorIndexViewModel.LoadMajorIndexViewModel
+				(
+					s.GetRequiredService<IMajorIndexService>()
 				)
 			);
 
-			services.AddScoped<INavigator,Navigator>();
-			services.AddScoped<MainViewModel>();
-			services.AddScoped<BuyStockViewModel>();
+			services.AddSingleton<IViewModelSwitcher,ViewModelSwitcher>();
+			services.AddSingleton<ViewModelDelegate<HomeViewModel>>(s=> s.GetRequiredService<HomeViewModel>);
+			services.AddSingleton<ViewModelDelegate<AboutViewModel>>(s=> s.GetRequiredService<AboutViewModel>);
+			services.AddSingleton<ViewModelDelegate<LogInViewModel>>(s=> s.GetRequiredService<LogInViewModel>);
+			services.AddSingleton<ViewModelDelegate<BuyStockViewModel>>(s=> s.GetRequiredService<BuyStockViewModel>);
+
+			services.AddSingleton<INavigator,Navigator>();
+			services.AddSingleton<MainViewModel>();
 			services.AddScoped<MainWindow>();
 
 			return services.BuildServiceProvider();

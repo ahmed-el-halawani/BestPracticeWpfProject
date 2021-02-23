@@ -9,7 +9,6 @@ namespace SimpleTrader.WPF.ViewModels
 
 		public AboutViewModel()
 		{
-			Title = "mohamed2";
 		}
 
 		

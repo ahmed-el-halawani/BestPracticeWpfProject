@@ -1,43 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using SimpleTrader.WPF.Commands;
-using SimpleTrader.WPF.State.Authenticator;
+using SimpleTrader.WPF.Models;
+using SimpleTrader.WPF.State.AuthedState;
+using SimpleTrader.WPF.State.CustomNav;
 using SimpleTrader.WPF.State.Navigators;
 using SimpleTrader.WPF.ViewModels.factories;
 
 namespace SimpleTrader.WPF.ViewModels
 {
-	public class MainViewModel : ViewModelsBase
+	public class MainViewModel : NavigatorViewModel
 	{
-		public  IAuthenticator Authenticator { get; set; }
+		public bool IsLoggedIn => _authedUser.IsLoggedIn;
 
-		public INavigator Navigator { get; set; }
-
-		public ICommand UpdateCurrentViewModelCommand { get; set; }
-
-
-		public MainViewModel()
+		public MainViewModel(INavigator navigator,IViewModelSwitcher viewModelAbstractFactory,CustomNav customNav,IAuthedUser authedUser):base(navigator,viewModelAbstractFactory,customNav)
 		{
-			
+			_authedUser = authedUser;
+
+			Actions();
+
+			customNav.CurrentViewType = ViewType.Login;
 		}
 
-		public MainViewModel(INavigator navigator,IAuthenticator authenticator, IBestPracticeViewModelsAbstractFactory bestPracticeViewModelsAbstractFactory)
+		private readonly IAuthedUser _authedUser;
+
+		private void Actions()
 		{
-			Authenticator = authenticator;
-			Navigator = navigator;
-
-			UpdateCurrentViewModelCommand = new UpdateCurrentViewModelCommand(navigator,bestPracticeViewModelsAbstractFactory);
-
-			UpdateCurrentViewModelCommand.Execute(ViewType.Login);
+			_authedUser.Observer += () => { OnPropertyChanged(nameof(IsLoggedIn));};
 		}
 
-		event Action nav;
-
-		protected virtual void OnNav()
-		{
-			nav?.Invoke();
-		}
 	}
 }

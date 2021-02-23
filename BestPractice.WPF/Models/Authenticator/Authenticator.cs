@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using SimpleTrader.Domain.Models;
-using SimpleTrader.Domain.Services;
 using SimpleTrader.Domain.Services.authentication;
-using SimpleTrader.WPF.Models;
-using SimpleTrader.WPF.State.Navigators;
+using SimpleTrader.WPF.State.AuthedState;
 
-namespace SimpleTrader.WPF.State.Authenticator
+namespace SimpleTrader.WPF.Models.Authenticator
 {
-	class Authenticator : ObservableObject,IAuthenticator
+	public class Authenticator : IAuthenticator
 	{
 
 		private readonly IAuthenticationService _authenticationService;
+		private readonly IAuthedUser _authedUser;
 
-		public Authenticator(IAuthenticationService authenticationService)
+		public Authenticator(IAuthenticationService authenticationService,IAuthedUser authedUser)
 		{
 			_authenticationService = authenticationService;
+			_authedUser = authedUser;
 		}
 
 
@@ -46,19 +44,11 @@ namespace SimpleTrader.WPF.State.Authenticator
 			AuthedAccount = null;
 		}
 
-		private Account _authedAccount;
 		public Account AuthedAccount
 		{
-			get => _authedAccount;
-			set
-			{
-				_authedAccount = value;
-				
-				OnPropertyChanged(nameof(AuthedAccount));
-				OnPropertyChanged(nameof(IsLoggedIn));
-			}
+			get => _authedUser.CurrentAccount;
+			private set => _authedUser.CurrentAccount = value;
 		}
 
-		public bool IsLoggedIn => AuthedAccount != null;
 	}
 }

@@ -33,19 +33,13 @@ namespace SimpleTrader.FinancialModelingPrepApi.Services
 
 		public string GetUriSuffix(MajorIndexType indexType)
 		{
-			switch (indexType)
+			return indexType switch
 			{
-				case MajorIndexType.DowJones:
-					return ".DJI";
-				case MajorIndexType.Nasdaq:
-					return ".IXIC";
-				case MajorIndexType.sp500:
-					return ".INX";
-				default:
-					return ".DJI";
-			}
+				MajorIndexType.DowJones => ".DJI",
+				MajorIndexType.Nasdaq => ".IXIC",
+				MajorIndexType.sp500 => ".INX",
+				_ => ".DJI"
+			};
 		}
-
-
 	}
 }

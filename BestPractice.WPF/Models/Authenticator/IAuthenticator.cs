@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using SimpleTrader.Domain.Models;
 using SimpleTrader.Domain.Services.authentication;
 
-namespace SimpleTrader.WPF.State.Authenticator
+namespace SimpleTrader.WPF.Models.Authenticator
 {
 	public interface IAuthenticator
 	{
@@ -14,7 +11,5 @@ namespace SimpleTrader.WPF.State.Authenticator
 		void LogOut();
 
 		Account AuthedAccount { get; }
-
-		bool IsLoggedIn { get; }
 	}
 }

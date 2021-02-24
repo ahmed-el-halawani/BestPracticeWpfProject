@@ -6,11 +6,8 @@ namespace SimpleTrader.WPF.ViewModels
 {
 	public class AboutViewModel : ViewModelsBase
 	{
-
 		public AboutViewModel()
 		{
 		}
-
-		
 	}
 }

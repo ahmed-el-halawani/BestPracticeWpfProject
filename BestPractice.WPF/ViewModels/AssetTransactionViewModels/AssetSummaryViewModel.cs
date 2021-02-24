@@ -4,13 +4,13 @@ using SimpleTrader.WPF.State.AuthedState;
 
 namespace SimpleTrader.WPF.ViewModels.AssetTransactionViewModels
 {
-	public class AssetTransactionViewModel : ViewModelsBase
+	public class AssetSummaryViewModel : ViewModelsBase
 	{
 		public decimal AccountBalance => _authedUser.AccountBalance;
 
 		public ObservableCollection<AssetViewModel> Assets { get;}
 
-		public AssetTransactionViewModel(IAuthedUser authedUser)
+		public AssetSummaryViewModel(IAuthedUser authedUser)
 		{
 			_authedUser = authedUser;
 
@@ -26,6 +26,7 @@ namespace SimpleTrader.WPF.ViewModels.AssetTransactionViewModels
 			var assetViewModels = _authedUser
 				.AssetTransactions
 				.GroupBy(a => a.Asset.Symbol)
+				.Take(3)
 				.Select
 				(g => new AssetViewModel()
 					{

@@ -56,7 +56,7 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<HomeViewModel>();
 			services.AddTransient<AboutViewModel>();
 			services.AddTransient<LogInViewModel>();
-			services.AddTransient<AssetTransactionViewModel>();
+			services.AddTransient<AssetSummaryViewModel>();
 
 			services.AddSingleton(s=>MajorIndexViewModel.LoadMajorIndexViewModel
 				(

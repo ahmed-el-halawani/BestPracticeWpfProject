@@ -12,6 +12,7 @@
         <ResourceDictionary Source="Styles/Style.xaml" />
         <ResourceDictionary Source="Styles/Common.xaml" />
         <ResourceDictionary Source="Styles/Converter.xaml" />
+        <ResourceDictionary Source="Styles/Navigation.xaml" />
       </ResourceDictionary.MergedDictionaries>
 
 

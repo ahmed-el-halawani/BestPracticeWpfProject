@@ -26,7 +26,7 @@ namespace SimpleTrader.WPF.ViewModels.AssetTransactionViewModels
 			var assetViewModels = _authedUser
 				.AssetTransactions
 				.GroupBy(a => a.Asset.Symbol)
-				.OrderBy(i=>i.Sum
+				.OrderByDescending(i=>i.Sum
 						(
 						i => 
 							i.IsPurchase 

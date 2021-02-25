@@ -10,10 +10,10 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid MinHeight="120">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="1*"></ColumnDefinition>
-        <ColumnDefinition Width="2*"></ColumnDefinition>
+        <ColumnDefinition Width="auto"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <Grid>
+      <Grid Width="300" HorizontalAlignment="Left">
         <Grid.RowDefinitions>
           <RowDefinition Height="auto"></RowDefinition>
           <RowDefinition Height="*"></RowDefinition>
@@ -30,43 +30,26 @@
                    FontSize="30" 
                    Text="{Binding AccountBalance,FallbackValue=999$,StringFormat={}{0:c}}"></TextBlock>
       </Grid>
-      <ListView BorderThickness="0" 
+
+      <DataGrid BorderThickness="0" 
+                HeadersVisibility="Column"
+                MinColumnWidth="150"
+                Background="Transparent"
+                FontSize="16"
                 Grid.Column="1" 
+                GridLinesVisibility="None"
+                IsReadOnly="True"
                 ItemsSource="{Binding Assets}">
         
-        
-
-        <ListView.ItemContainerStyle>
-          <Style TargetType="ListViewItem">
-              <Setter Property="Focusable" Value="False"></Setter>
-              <Setter Property="IsHitTestVisible" Value="False"></Setter>
-              <Setter Property="Margin" Value="0 10"></Setter>
-              <Setter Property="Foreground" Value="Black"/>
+        <DataGrid.Resources>
+          <Style TargetType="DataGridCell">
+            <Setter Property="Focusable" Value="False"></Setter>
+            <Setter Property="IsHitTestVisible" Value="False"></Setter>
+            <Setter Property="Margin" Value="0 4"></Setter>
+            <Setter Property="Foreground" Value="Black"/>
           </Style>
-        </ListView.ItemContainerStyle>
 
-        <ListView.View>
-          <GridView>
-
-            <GridView.ColumnHeaderContainerStyle>
-              <Style TargetType="GridViewColumnHeader">
-                <Setter Property="MinWidth" Value="100"></Setter>
-              </Style>
-            </GridView.ColumnHeaderContainerStyle>
-
-            <GridViewColumn
-              Header="Symbol"
-              DisplayMemberBinding="{Binding Symbol}"
-              
-              />
-
-            <GridViewColumn
-              Header="shares"
-              DisplayMemberBinding="{Binding Shares}"
-            />
-              
-          </GridView>
-        </ListView.View>
-      </ListView>
+        </DataGrid.Resources>
+      </DataGrid>
     </Grid>
 </UserControl>

@@ -13,11 +13,18 @@ namespace SimpleTrader.FinancialModelingPrepApi.Services
 {
 	public class StockPriceService :IStockPriceService
 	{
+		private StockPriceHttpClient stockPriceHttpClient;
+
+		public StockPriceService(StockPriceHttpClient stockPriceHttpClient)
+		{
+			this.stockPriceHttpClient = stockPriceHttpClient;
+		}
+
 		public async Task<decimal> GetPrice(string symbol)
 		{
 			string uri = $"stock/real-time-price/{symbol}";
 
-			using StockPriceHttpClient client = new StockPriceHttpClient();
+			using StockPriceHttpClient client = stockPriceHttpClient;
 			StockPrice response = await client.GetAsync<StockPrice>(uri);
 
 			if(response.Price == default)

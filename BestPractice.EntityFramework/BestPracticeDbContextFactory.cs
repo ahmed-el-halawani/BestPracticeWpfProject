@@ -6,14 +6,20 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace SimpleTrader.EntityFramework
 {
-	public class BestPracticeDbContextFactory : IDesignTimeDbContextFactory<BestPracticeDbContext>
+	public class BestPracticeDbContextFactory 
 	{
+		private string _connectionString;
 
-		public BestPracticeDbContext CreateDbContext(string[] args = null)
+		public BestPracticeDbContextFactory(string connectionString)
+		{
+			_connectionString = connectionString;
+		}
+
+		public BestPracticeDbContext CreateDbContext()
 		{
 			var optinos = new DbContextOptionsBuilder<BestPracticeDbContext>();
 			string connectionString = @"server=desktop-h2le4iq\sql2020;Database=BestPracticeDatabase;integrated security=True";
-			optinos.UseSqlServer(connectionString);
+			optinos.UseSqlServer(_connectionString);
 			return new BestPracticeDbContext(optinos.Options);
 		}
 	}

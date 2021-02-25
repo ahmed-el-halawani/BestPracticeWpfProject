@@ -1,12 +1,15 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text;
 using SimpleTrader.WPF.State.AuthedState;
 
 namespace SimpleTrader.WPF.ViewModels.AssetTransactionViewModels
 {
-	public class AssetSummaryViewModel : AssetViewModelListFactory
+	public class AllAssetViewModel : AssetViewModelListFactory
 	{
-		public AssetSummaryViewModel(IAuthedUser authedUser) : base(authedUser)
+		public AllAssetViewModel(IAuthedUser authedUser) : base(authedUser)
 		{
 			CurrentAccountChangeNotify();
 		}
@@ -18,13 +21,12 @@ namespace SimpleTrader.WPF.ViewModels.AssetTransactionViewModels
 				.GroupBy(a => a.Asset.Symbol)
 				.OrderByDescending(i=>i.Sum
 					(
-						i => 
-							i.IsPurchase 
-								? i.Shares 
-								: -i.Shares
+						assetTransaction => 
+							assetTransaction.IsPurchase 
+								? assetTransaction.Shares 
+								: -assetTransaction.Shares
 					)
 				)
-				.Take(3)
 				.Select
 				(g => new AssetViewModel()
 					{
@@ -35,6 +37,5 @@ namespace SimpleTrader.WPF.ViewModels.AssetTransactionViewModels
 
 			UpdateList(assetViewModels);
 		}
-
 	}
 }

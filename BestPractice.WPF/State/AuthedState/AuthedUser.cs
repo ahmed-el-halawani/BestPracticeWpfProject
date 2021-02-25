@@ -4,7 +4,7 @@ using SimpleTrader.WPF.Models;
 
 namespace SimpleTrader.WPF.State.AuthedState
 {
-	class AuthedUser :ObservableAction,IAuthedUser
+	public class AuthedUser :ObservableAction,IAuthedUser
 	{
 		public User CurrentUser => CurrentAccount?.AccountHolder;
 

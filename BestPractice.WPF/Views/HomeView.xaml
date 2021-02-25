@@ -18,6 +18,7 @@
     </Grid.RowDefinitions>
     <controls:AssetSummary Grid.Row="0" DataContext="{Binding AssetSummaryViewModel}"></controls:AssetSummary>
 
-    <controls:MajorIndexList Grid.Row="1" DataContext="{Binding MajorIndexViewModel}"></controls:MajorIndexList>
+    <controls:MajorIndexList 
+      Grid.Row="1" DataContext="{Binding MajorIndexViewModel}"></controls:MajorIndexList>
   </Grid>
 </UserControl>

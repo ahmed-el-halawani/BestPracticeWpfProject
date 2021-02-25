@@ -37,6 +37,7 @@
           <ColumnDefinition Width="auto" />
           <ColumnDefinition Width="auto" />
           <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="auto" />
           <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -51,6 +52,15 @@
         <RadioButton
           Grid.Column="1"
           Style="{StaticResource NavRadioButton}"
+          IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:ProtofilioViewModel}}"
+          Content="protofilio"
+          Command="{Binding UpdateCurrentViewModelCommand}"
+          CommandParameter="{x:Static mv:ViewType.Protofilio}"
+          Foreground="White" />
+
+        <RadioButton
+          Grid.Column="2"
+          Style="{StaticResource NavRadioButton}"
           IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:AboutViewModel}}"
           Content="AboutView"
           Command="{Binding UpdateCurrentViewModelCommand}"
@@ -58,7 +68,7 @@
           Foreground="White" />
 
         <RadioButton
-          Grid.Column="2"
+          Grid.Column="3"
           Style="{StaticResource NavRadioButton}"
 
           IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:BuyStockViewModel}}"

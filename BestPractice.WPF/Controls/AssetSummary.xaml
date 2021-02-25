@@ -7,6 +7,7 @@
              xmlns:asset="clr-namespace:SimpleTrader.WPF.ViewModels.AssetTransactionViewModels"
              d:DataContext="{d:DesignInstance   asset:AssetSummaryViewModel}"
              mc:Ignorable="d" 
+             MinWidth="780"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid MinHeight="120">
       <Grid.ColumnDefinitions>
@@ -23,6 +24,7 @@
           Text="Balance"
           FontSize="20"
           FontWeight="Bold"
+          Margin="0 0,0,5"
           />
 
         <TextBlock Grid.Row="1" HorizontalAlignment="Center" 
@@ -31,25 +33,19 @@
                    Text="{Binding AccountBalance,FallbackValue=999$,StringFormat={}{0:c}}"></TextBlock>
       </Grid>
 
-      <DataGrid BorderThickness="0" 
-                HeadersVisibility="Column"
-                MinColumnWidth="150"
-                Background="Transparent"
-                FontSize="16"
-                Grid.Column="1" 
-                GridLinesVisibility="None"
-                IsReadOnly="True"
-                ItemsSource="{Binding Assets}">
-        
-        <DataGrid.Resources>
-          <Style TargetType="DataGridCell">
-            <Setter Property="Focusable" Value="False"></Setter>
-            <Setter Property="IsHitTestVisible" Value="False"></Setter>
-            <Setter Property="Margin" Value="0 4"></Setter>
-            <Setter Property="Foreground" Value="Black"/>
-          </Style>
+      <Grid Grid.Column="1">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
 
-        </DataGrid.Resources>
-      </DataGrid>
+        <TextBlock 
+          Text="Top Assets"
+          FontSize="20"
+          FontWeight="Bold"
+          Margin="0 0,0,5"
+        />
+        <local:AssetDataGrid Grid.Row="1" FontSize="16"></local:AssetDataGrid>
+      </Grid>
     </Grid>
 </UserControl>

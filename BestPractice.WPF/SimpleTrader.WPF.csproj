@@ -16,4 +16,10 @@
     <ProjectReference Include="..\SimpleTrader.FinancialModelingPrepApi\SimpleTrader.FinancialModelingPrepApi.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

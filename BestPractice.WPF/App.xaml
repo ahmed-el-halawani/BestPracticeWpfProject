@@ -39,6 +39,9 @@
       <DataTemplate DataType="{x:Type viewModel:RegisterViewModel}">
         <view:RegisterView></view:RegisterView>
       </DataTemplate>
+      <DataTemplate DataType="{x:Type viewModel:ProtofilioViewModel}">
+        <view:Protofilio></view:Protofilio>
+      </DataTemplate>
 
     </ResourceDictionary>
   </Application.Resources>

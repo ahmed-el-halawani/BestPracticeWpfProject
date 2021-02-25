@@ -69,10 +69,11 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<IBuyStockService,BuyStockService>();
 
 			string apiKey = context.Configuration.GetValue<string>("Financial_Api_Key");
-			services.AddSingleton(new StockPriceHttpClient(apiKey));
+			services.AddSingleton(s=>new StockPriceHttpClientFactory(apiKey));
 
 			string connectionString = context.Configuration.GetConnectionString("default");
 			services.AddSingleton(new BestPracticeDbContextFactory(connectionString));
+
 
 			services.AddDbContext<BestPracticeDbContext>(s => s.UseSqlServer(connectionString));
 
@@ -90,7 +91,9 @@ namespace SimpleTrader.WPF
 			services.AddTransient<AboutViewModel>();
 			services.AddTransient<LogInViewModel>();
 			services.AddTransient<AssetSummaryViewModel>();
+			services.AddTransient<AllAssetViewModel>();
 			services.AddTransient<RegisterViewModel>();
+			services.AddSingleton<ProtofilioViewModel>();
 
 			services.AddSingleton(s=>MajorIndexViewModel.LoadMajorIndexViewModel
 				(
@@ -104,6 +107,7 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<ViewModelDelegate<LogInViewModel>>(s=> s.GetRequiredService<LogInViewModel>);
 			services.AddSingleton<ViewModelDelegate<BuyStockViewModel>>(s=> s.GetRequiredService<BuyStockViewModel>);
 			services.AddSingleton<ViewModelDelegate<RegisterViewModel>>(s=> s.GetRequiredService<RegisterViewModel>);
+			services.AddSingleton<ViewModelDelegate<ProtofilioViewModel>>(s=> s.GetRequiredService<ProtofilioViewModel>);
 
 			services.AddSingleton<INavigatorState,NavigatorState>();
 			services.AddSingleton<MainViewModel>();

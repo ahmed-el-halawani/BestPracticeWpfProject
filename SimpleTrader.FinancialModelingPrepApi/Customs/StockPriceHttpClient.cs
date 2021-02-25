@@ -30,9 +30,9 @@ namespace SimpleTrader.FinancialModelingPrepApi.Customs
 
 				return deserializeObject;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
-				throw new Exception("no internet connection");
+				throw new Exception("no internet connection" + e.Message);
 			}
 			
 		}

@@ -11,7 +11,7 @@ namespace SimpleTrader.WPF.ViewModels
 {
 	public enum ViewType
 	{
-		Home,About,Buy,Login,Register
+		Home,About,Buy,Login,Register,Protofilio
 	}
 	public class NavigatorViewModel : ViewModelsBase
 	{

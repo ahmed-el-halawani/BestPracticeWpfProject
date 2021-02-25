@@ -14,6 +14,7 @@ namespace SimpleTrader.WPF.ViewModels.MVSwitcher
 				ViewType.Login => _loginViewModel(),
 				ViewType.Buy => _buyStockViewModel(),
 				ViewType.Register => _registerViewModel(),
+				ViewType.Protofilio => _protofilioViewModel(),
 				_ => throw new Exception($"View Type Not Existing")
 			};
 		}
@@ -24,13 +25,15 @@ namespace SimpleTrader.WPF.ViewModels.MVSwitcher
 			ViewModelDelegate<AboutViewModel> aboutViewModel, 
 			ViewModelDelegate<BuyStockViewModel> buyStockViewModel,
 			ViewModelDelegate<LogInViewModel> loginViewModel,
-			ViewModelDelegate<RegisterViewModel> registerViewModel
+			ViewModelDelegate<RegisterViewModel> registerViewModel,
+			ViewModelDelegate<ProtofilioViewModel> protofilioViewModel
 		){
 			_homeViewModel = homeViewModel;
 			_aboutViewModel = aboutViewModel;
 			_buyStockViewModel = buyStockViewModel;
 			_loginViewModel = loginViewModel;
 			_registerViewModel = registerViewModel;
+			_protofilioViewModel = protofilioViewModel;
 		}
 
 		private readonly ViewModelDelegate<HomeViewModel> _homeViewModel;
@@ -38,5 +41,6 @@ namespace SimpleTrader.WPF.ViewModels.MVSwitcher
 		private readonly ViewModelDelegate<BuyStockViewModel> _buyStockViewModel;
 		private readonly ViewModelDelegate<LogInViewModel> _loginViewModel;
 		private readonly ViewModelDelegate<RegisterViewModel> _registerViewModel;
+		private readonly ViewModelDelegate<ProtofilioViewModel> _protofilioViewModel;
 	}
 }

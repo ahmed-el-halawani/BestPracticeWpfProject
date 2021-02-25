@@ -2,6 +2,7 @@
 using System.Windows;
 using Microsoft.AspNet.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using SimpleTrader.Domain.Models;
 using SimpleTrader.Domain.Services;
 using SimpleTrader.Domain.Services.authentication;
@@ -25,57 +26,70 @@ namespace SimpleTrader.WPF
 	/// </summary>
 	public partial class App : Application
 	{
+		public App()
+		{
+			_host = HostBuilder().Build();
+		}
+
+
+		public static IHostBuilder HostBuilder(string[] args = null)
+		{
+			return Host.CreateDefaultBuilder(args).ConfigureServices(services =>
+			{
+				services.AddSingleton<IStockPriceService, StockPriceService>();
+				services.AddSingleton<IDataService<Account>,AccountDataService>();
+				services.AddSingleton<IDataService<User>,GenericDataService<User>>();
+				services.AddSingleton<IBuyStockService,BuyStockService>();
+				services.AddSingleton<BestPracticeDbContextFactory>();
+				services.AddSingleton<IMajorIndexService,MajorIndexService>();
+				services.AddSingleton<IAccountDataService, AccountDataService>();
+				services.AddSingleton<IAuthenticationService, AuthenticationService>();
+				services.AddSingleton<IPasswordHasher,PasswordHasher>();
+				services.AddSingleton<IAuthenticator,Authenticator>();
+				services.AddSingleton<INavigator,Navigator>();
+				services.AddSingleton<IAuthedUser,AuthedUser>();
+				services.AddSingleton<AssetState>();
+
+				services.AddTransient<BuyStockViewModel>();
+				services.AddSingleton<HomeViewModel>();
+				services.AddTransient<AboutViewModel>();
+				services.AddTransient<LogInViewModel>();
+				services.AddTransient<AssetSummaryViewModel>();
+
+				services.AddSingleton(s=>MajorIndexViewModel.LoadMajorIndexViewModel
+					(
+						s.GetRequiredService<IMajorIndexService>()
+					)
+				);
+
+				services.AddSingleton<IViewModelSwitcher,ViewModelSwitcher>();
+				services.AddSingleton<ViewModelDelegate<HomeViewModel>>(s=> s.GetRequiredService<HomeViewModel>);
+				services.AddSingleton<ViewModelDelegate<AboutViewModel>>(s=> s.GetRequiredService<AboutViewModel>);
+				services.AddSingleton<ViewModelDelegate<LogInViewModel>>(s=> s.GetRequiredService<LogInViewModel>);
+				services.AddSingleton<ViewModelDelegate<BuyStockViewModel>>(s=> s.GetRequiredService<BuyStockViewModel>);
+
+				services.AddSingleton<INavigatorState,NavigatorState>();
+				services.AddSingleton<MainViewModel>();
+				services.AddScoped<MainWindow>();
+			});
+		}
+
 		protected override void OnStartup(StartupEventArgs e)
 		{
-			IServiceProvider services = CreateServiceProvider();
-			services.GetRequiredService<MainWindow>().Show();
+			_host.Start();
+			_host.Services.GetRequiredService<MainWindow>().Show();
 			base.OnStartup(e);
 		}
 
-
-
-		private IServiceProvider CreateServiceProvider()
+		protected override async void OnExit(ExitEventArgs e)
 		{
-			IServiceCollection services = new ServiceCollection();
+			await _host.StopAsync();
+			_host.Dispose();
 
-			services.AddSingleton<IStockPriceService, StockPriceService>();
-			services.AddSingleton<IDataService<Account>,AccountDataService>();
-			services.AddSingleton<IDataService<User>,GenericDataService<User>>();
-			services.AddSingleton<IBuyStockService,BuyStockService>();
-			services.AddSingleton<BestPracticeDbContextFactory>();
-			services.AddSingleton<IMajorIndexService,MajorIndexService>();
-			services.AddSingleton<IAccountDataService, AccountDataService>();
-			services.AddSingleton<IAuthenticationService, AuthenticationService>();
-			services.AddSingleton<IPasswordHasher,PasswordHasher>();
-			services.AddSingleton<IAuthenticator,Authenticator>();
-			services.AddSingleton<INavigator,Navigator>();
-			services.AddSingleton<IAuthedUser,AuthedUser>();
-			services.AddSingleton<AssetState>();
-
-			services.AddTransient<BuyStockViewModel>();
-			services.AddSingleton<HomeViewModel>();
-			services.AddTransient<AboutViewModel>();
-			services.AddTransient<LogInViewModel>();
-			services.AddTransient<AssetSummaryViewModel>();
-
-			services.AddSingleton(s=>MajorIndexViewModel.LoadMajorIndexViewModel
-				(
-					s.GetRequiredService<IMajorIndexService>()
-				)
-			);
-
-			services.AddSingleton<IViewModelSwitcher,ViewModelSwitcher>();
-			services.AddSingleton<ViewModelDelegate<HomeViewModel>>(s=> s.GetRequiredService<HomeViewModel>);
-			services.AddSingleton<ViewModelDelegate<AboutViewModel>>(s=> s.GetRequiredService<AboutViewModel>);
-			services.AddSingleton<ViewModelDelegate<LogInViewModel>>(s=> s.GetRequiredService<LogInViewModel>);
-			services.AddSingleton<ViewModelDelegate<BuyStockViewModel>>(s=> s.GetRequiredService<BuyStockViewModel>);
-
-			services.AddSingleton<INavigatorState,NavigatorState>();
-			services.AddSingleton<MainViewModel>();
-			services.AddScoped<MainWindow>();
-
-			return services.BuildServiceProvider();
-
+			base.OnExit(e);
 		}
+
+		private readonly IHost _host;
+
 	}
 }

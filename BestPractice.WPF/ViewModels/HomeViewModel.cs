@@ -6,12 +6,12 @@ namespace SimpleTrader.WPF.ViewModels
 	{
 		public MajorIndexViewModel MajorIndexViewModel { get; set; }
 
-		public AssetSummaryViewModel AssetTransactionViewModel { get; set; }
+		public AssetSummaryViewModel AssetSummaryViewModel { get; set; }
 
-		public HomeViewModel(MajorIndexViewModel majorIndexViewModel,AssetSummaryViewModel assetTransactionViewModel)
+		public HomeViewModel(MajorIndexViewModel majorIndexViewModel,AssetSummaryViewModel assetSummaryViewModel)
 		{
 			MajorIndexViewModel = majorIndexViewModel;
-			AssetTransactionViewModel = assetTransactionViewModel;
+			AssetSummaryViewModel = assetSummaryViewModel;
 		}
 	}
 }

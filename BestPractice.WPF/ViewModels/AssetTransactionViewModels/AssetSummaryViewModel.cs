@@ -26,6 +26,14 @@ namespace SimpleTrader.WPF.ViewModels.AssetTransactionViewModels
 			var assetViewModels = _authedUser
 				.AssetTransactions
 				.GroupBy(a => a.Asset.Symbol)
+				.OrderBy(i=>i.Sum
+						(
+						i => 
+							i.IsPurchase 
+								? i.Shares 
+								: -i.Shares
+						)
+					)
 				.Take(3)
 				.Select
 				(g => new AssetViewModel()
@@ -41,7 +49,7 @@ namespace SimpleTrader.WPF.ViewModels.AssetTransactionViewModels
 				Assets.Add(assetViewModel);
 			}
 		}
-
+		
 		private readonly IAuthedUser _authedUser;
 
 	}

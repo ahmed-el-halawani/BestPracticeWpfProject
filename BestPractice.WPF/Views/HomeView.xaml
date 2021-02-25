@@ -7,8 +7,16 @@
   xmlns:controls="clr-namespace:SimpleTrader.WPF.Controls"
   d:DesignHeight="450"
   d:DesignWidth="800"
+  xmlns:mv ="clr-namespace:SimpleTrader.WPF.ViewModels"
+  d:DataContext="{d:DesignInstance   mv:HomeViewModel}"
   mc:Ignorable="d">
   <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-    <controls:MajorIndexList DataContext="{Binding MajorIndexViewModel}"></controls:MajorIndexList>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"></RowDefinition>
+      <RowDefinition Height="*"></RowDefinition>
+    </Grid.RowDefinitions>
+    <controls:AssetSummary Grid.Row="0" DataContext="{Binding AssetSummaryViewModel}"></controls:AssetSummary>
+
+    <controls:MajorIndexList Grid.Row="1" DataContext="{Binding MajorIndexViewModel}"></controls:MajorIndexList>
   </Grid>
 </UserControl>

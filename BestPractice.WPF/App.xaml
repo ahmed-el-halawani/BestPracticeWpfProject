@@ -33,7 +33,11 @@
 
 
       <DataTemplate DataType="{x:Type viewModel:LogInViewModel}">
-        <view:LogInView LogInCommand="{Binding LogInCommand}"></view:LogInView>
+        <view:LogInView></view:LogInView>
+      </DataTemplate>
+
+      <DataTemplate DataType="{x:Type viewModel:RegisterViewModel}">
+        <view:RegisterView></view:RegisterView>
       </DataTemplate>
 
     </ResourceDictionary>

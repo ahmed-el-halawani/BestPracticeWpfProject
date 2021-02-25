@@ -13,6 +13,8 @@ namespace SimpleTrader.WPF.ViewModels
 	{
 		public ICommand LogInCommand { get; set; }
 
+		public ICommand GoToRegister { get; }
+
 		public string UserName
 		{
 			get => _userName;
@@ -23,8 +25,24 @@ namespace SimpleTrader.WPF.ViewModels
 			}
 		}
 
-		public LogInViewModel(IAuthenticator authenticator, INavigator navigator) => 
+		private string _password;
+
+		public string Password
+		{
+			get => _password;
+			set
+			{
+				_password = value;
+				OnPropertyChanged(nameof(Password));
+			}
+		}
+
+		public LogInViewModel(IAuthenticator authenticator, INavigator navigator)
+		{
 			LogInCommand = new LogInCommand(this, authenticator, navigator);
+
+			GoToRegister = new NavigateCommand(navigator);
+		}
 
 		private string _userName;
 		

@@ -12,6 +12,9 @@
     <Compile Update="Controls\AssetSummary.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CustomComponent\BindablePasswordBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\MajorIndexCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,9 +36,15 @@
     <Compile Update="Views\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\RegisterView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\AssetSummary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomComponent\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\MajorIndexCard.xaml">
@@ -75,6 +84,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RegisterView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -11,6 +11,7 @@ using SimpleTrader.Domain.Services.authentication;
 using SimpleTrader.Domain.Services.TransactionServices;
 using SimpleTrader.EntityFramework;
 using SimpleTrader.EntityFramework.Services;
+using SimpleTrader.FinancialModelingPrepApi.Customs;
 using SimpleTrader.FinancialModelingPrepApi.Services;
 using SimpleTrader.WPF.Models.Authenticator;
 using SimpleTrader.WPF.Models.Navigator;
@@ -26,7 +27,7 @@ namespace SimpleTrader.WPF
 	/// <summary>
 	/// Interaction logic for App.xaml
 	/// </summary>
-	public partial class App : Application
+	public partial class App
 	{
 		public App()
 		{
@@ -67,8 +68,11 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<IDataService<User>,GenericDataService<User>>();
 			services.AddSingleton<IBuyStockService,BuyStockService>();
 
+			string apiKey = context.Configuration.GetValue<string>("Financial_Api_Key");
+			services.AddSingleton(new StockPriceHttpClient(apiKey));
+
 			string connectionString = context.Configuration.GetConnectionString("default");
-			services.AddSingleton<BestPracticeDbContextFactory>(new BestPracticeDbContextFactory(connectionString));
+			services.AddSingleton(new BestPracticeDbContextFactory(connectionString));
 
 			services.AddDbContext<BestPracticeDbContext>(s => s.UseSqlServer(connectionString));
 
@@ -86,6 +90,7 @@ namespace SimpleTrader.WPF
 			services.AddTransient<AboutViewModel>();
 			services.AddTransient<LogInViewModel>();
 			services.AddTransient<AssetSummaryViewModel>();
+			services.AddTransient<RegisterViewModel>();
 
 			services.AddSingleton(s=>MajorIndexViewModel.LoadMajorIndexViewModel
 				(
@@ -98,6 +103,7 @@ namespace SimpleTrader.WPF
 			services.AddSingleton<ViewModelDelegate<AboutViewModel>>(s=> s.GetRequiredService<AboutViewModel>);
 			services.AddSingleton<ViewModelDelegate<LogInViewModel>>(s=> s.GetRequiredService<LogInViewModel>);
 			services.AddSingleton<ViewModelDelegate<BuyStockViewModel>>(s=> s.GetRequiredService<BuyStockViewModel>);
+			services.AddSingleton<ViewModelDelegate<RegisterViewModel>>(s=> s.GetRequiredService<RegisterViewModel>);
 
 			services.AddSingleton<INavigatorState,NavigatorState>();
 			services.AddSingleton<MainViewModel>();

@@ -270,7 +270,7 @@ namespace SimpleTrader.WPF.Annotations
   ///
   ///   string _name;
   /// 
-  ///   public string Name {
+  ///   public string UserName {
   ///     get { return _name; }
   ///     set { _name = value; NotifyChanged("LastName"); /* Warning */ }
   ///   }

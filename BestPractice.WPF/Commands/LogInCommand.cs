@@ -24,7 +24,8 @@ namespace SimpleTrader.WPF.Commands
 		public override async void Execute(object parameter)
 		{
 			string userName = _logInViewModel.UserName;
-			await _authenticator.Login(userName, parameter.ToString());
+			string password = _logInViewModel.Password;
+			await _authenticator.Login(userName, password);
 			base.Execute(ViewType.Home);
 		}
 	}

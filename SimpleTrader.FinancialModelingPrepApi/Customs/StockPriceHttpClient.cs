@@ -10,10 +10,12 @@ namespace SimpleTrader.FinancialModelingPrepApi.Customs
 {
 	public class StockPriceHttpClient : HttpClient
 	{
-		private readonly string apiKey = "?apikey=fbf300a1773a0a6688f5e2e1d3a75774";
+		private readonly string _apiKey;
 
-		public StockPriceHttpClient()
+
+		public StockPriceHttpClient(string apiKey)
 		{
+			_apiKey = apiKey;
 			base.BaseAddress = new Uri("https://financialmodelingprep.com/api/v3/");
 		}
 
@@ -21,7 +23,7 @@ namespace SimpleTrader.FinancialModelingPrepApi.Customs
 		{
 			try
 			{
-				HttpResponseMessage response = await GetAsync(uri+apiKey);
+				HttpResponseMessage response = await GetAsync(uri+_apiKey);
 				string responseValue = await response.Content.ReadAsStringAsync();
 
 				T deserializeObject = JsonConvert.DeserializeObject<T>(responseValue);

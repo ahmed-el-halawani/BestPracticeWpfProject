@@ -7,10 +7,11 @@
   xmlns:controls="clr-namespace:SimpleTrader.WPF.Controls"
   d:DesignHeight="450"
   d:DesignWidth="800"
+  MinWidth="800"
   xmlns:mv ="clr-namespace:SimpleTrader.WPF.ViewModels"
   d:DataContext="{d:DesignInstance   mv:HomeViewModel}"
   mc:Ignorable="d">
-  <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+  <Grid HorizontalAlignment="Center" Margin="10">
     <Grid.RowDefinitions>
       <RowDefinition Height="auto"></RowDefinition>
       <RowDefinition Height="*"></RowDefinition>

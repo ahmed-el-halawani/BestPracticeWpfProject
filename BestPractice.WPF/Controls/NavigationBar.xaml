@@ -10,54 +10,64 @@
   xmlns:mv="clr-namespace:SimpleTrader.WPF.ViewModels"
   Foreground="White"
   mc:Ignorable="d">
-  <Grid>
+  <Grid 
+    UseLayoutRounding="True"
+  >
     <Grid.RowDefinitions>
       <RowDefinition Height="auto" />
       <RowDefinition Height="auto" />
       <RowDefinition Height="auto" />
     </Grid.RowDefinitions>
 
+  <Border Background="{StaticResource BrushPrimary2}">
     <TextBlock 
-  Background="{StaticResource BrushPrimary2}"
-  FontWeight="Black"
-  FontSize="40px" Text="BestPractice" />
+      MaxWidth="780"
+      FontWeight="Black"
+      FontSize="40px" Text="BestPractice" />
+  </Border>
 
-    <Grid Grid.Row="1" Background="{StaticResource BrushPrimary1}">
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="auto" />
-        <ColumnDefinition Width="auto" />
-        <ColumnDefinition Width="auto" />
-        <ColumnDefinition Width="*" />
-      </Grid.ColumnDefinitions>
+    <Border
+      Grid.Row="1" 
+      Background="{StaticResource BrushPrimary1}"
+      >
+      <Grid 
+      MaxWidth="780"
+      >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-      <RadioButton
-        Grid.Column="0"
-        Margin="10"
-        IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam},ConverterParameter={x:Type mv:HomeViewModel}}"
+        <RadioButton
+          Style="{StaticResource NavRadioButton}"
+          Grid.Column="0"
+          IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam},ConverterParameter={x:Type mv:HomeViewModel}}"
+          Content="HomeView"
+          Command="{Binding UpdateCurrentViewModelCommand}"
+          CommandParameter="{x:Static mv:ViewType.Home}"
+          Foreground="White" />
+        <RadioButton
+          Grid.Column="1"
+          Style="{StaticResource NavRadioButton}"
+          IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:AboutViewModel}}"
+          Content="AboutView"
+          Command="{Binding UpdateCurrentViewModelCommand}"
+          CommandParameter="{x:Static mv:ViewType.About}"
+          Foreground="White" />
 
-        Content="HomeView"
-        Command="{Binding UpdateCurrentViewModelCommand}"
-        CommandParameter="{x:Static mv:ViewType.Home}"
-        Foreground="White" />
-      <RadioButton
-        Grid.Column="1"
-        Margin="10"
-        IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:AboutViewModel}}"
-        Content="AboutView"
-        Command="{Binding UpdateCurrentViewModelCommand}"
-        CommandParameter="{x:Static mv:ViewType.About}"
-        Foreground="White" />
+        <RadioButton
+          Grid.Column="2"
+          Style="{StaticResource NavRadioButton}"
 
-      <RadioButton
-        Grid.Column="2"
-        Margin="10"
-        IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:BuyStockViewModel}}"
-        Content="Buy Stock"
-        Command="{Binding UpdateCurrentViewModelCommand}"
-        CommandParameter="{x:Static mv:ViewType.Buy}"
-        Foreground="White" />
-    </Grid>
+          IsChecked="{Binding CurrentViewModel,Mode=OneWay,Converter={StaticResource AssignBindingToParam} ,ConverterParameter={x:Type mv:BuyStockViewModel}}"
+          Content="Buy Stock"
+          Command="{Binding UpdateCurrentViewModelCommand}"
+          CommandParameter="{x:Static mv:ViewType.Buy}"
+          Foreground="White" />
+      </Grid>
 
-
+      </Border>
   </Grid>
 </UserControl>
